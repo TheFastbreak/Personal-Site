@@ -2,7 +2,7 @@
   "name": "web-complete-toolkit",
   "version": "1.0.0",
   "description": "Toolkit for web development",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.13.0",

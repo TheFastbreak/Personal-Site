@@ -1,53 +1,55 @@
-const
- GULP = require('gulp'),
- SASS = require('gulp-sass'),
- PREFIX = require('gulp-autoprefixer'),
- BS = require('browser-sync'),
- CP = require('child_process'),
- JALERT = '<span style="color: coral">Jekyll is Running:</span> $ jekyll build';
+var gulp        = require('gulp');
+var browserSync = require('browser-sync');
+var sass        = require('gulp-sass');
+var prefix      = require('gulp-autoprefixer');
+var cp          = require('child_process');
+
+var messages = {
+    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+};
 
 // Jekyll Task
- GULP.task('jekyll-build', function (done) {
-     BS.notify(JALERT);
-     return CP.spawn('jekyll', ['build'], {stdio: 'inherit'})
+ gulp.task('jekyll-build', function (done) {
+     browserSync.notify(messages.jekyllBuild);
+     return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
          .on('close', done);
  });
 
- GULP.task('jekyll-rebuild', ['jekyll-build'], function () {
-     BS.reload();
+ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+     browserSync.reload();
  });
 
 // Borwser-Sync
 
-GULP.task('bs-sync', ['sass-build', 'jekyll-build'], function() {
-  BS({
+gulp.task('browserSync-sync', ['sass', 'jekyll-build'], function() {
+  browserSync({
     server: {baseDir: "_site"}
 
   });
 });
 
-// Sass to Css to Pipe Task
- GULP.task('sass-build', function () {
-   return GULP.src('assets/styles/main.sass')
-     .pipe(SASS({
-       includePaths: ['css'],
-       onError: BS.notify
-     }))
-     .pipe(PREFIX(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-     .pipe(GULP.dest('_site/assets/styles'))
-     .pipe(BS.reload({stream:true}))
-     .pipe(GULP.dest('assets/styles'));
- });
+// sass to Css to Pipe Task
+gulp.task('sass', function () {
+    return gulp.src('assets/styles/main.sass')
+        .pipe(sass({
+            includePaths: ['css'],
+            onError: browserSync.notify
+        }))
+        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(gulp.dest('_site/assets/styles'))
+        .pipe(browserSync.reload({stream:true}))
+        .pipe(gulp.dest('assets/styles'));
+});
 
 
 
 
- // GULP watching all files...
+ // gulp watching all files...
 
-GULP.task('watch', function () {
-  GULP.watch("assets/js/**/*.js", ['jekyll-rebuild']);
-  GULP.watch('assets/styles/**', ['jekyll-rebuild']);
-  GULP.watch(['*.html', '_layouts/*.html', '_includes/*.html'], ['jekyll-rebuild']);
+gulp.task('watch', function () {
+  gulp.watch("assets/js/**/*.js", ['jekyll-rebuild']);
+  gulp.watch('assets/styles/**', ['jekyll-rebuild']);
+  gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html'], ['jekyll-rebuild']);
 })
 
-gulp.task('default', ['bs-sync', 'watch']);
+gulp.task('default', ['browserSync-sync', 'watch']);
