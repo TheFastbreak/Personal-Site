@@ -1,7 +1,7 @@
 {
   "name": "web-complete-toolkit",
   "version": "1.0.0",
-  "description": "Toolkit for web development",
+  "description": "Personal Site",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
