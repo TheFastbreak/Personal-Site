@@ -41,7 +41,6 @@ body
   text-align: center
   color: white
 
-
 #name
   text-align: center
   color: white
@@ -55,6 +54,8 @@ body
   position: relative
   top: calc((100vh - 72px) * 0.30)
   opacity: 0.9
+  user-select: none
+  cursor: pointer
 
 #tools
   z-index: 1
@@ -118,11 +119,17 @@ body
   background-color: black
   font-weight: bold
   display: inline-block
+  user-select: none
+  cursor: pointer
 
 
-#res:hover
+.res:hover
   background-color: white
   color: black
+  opacity: 0.9
+
+#wrap
+  position: relative
 
 #content
   width: 100px
@@ -137,3 +144,67 @@ body
   text-align: center
   font-size: 15px
   padding-top: 5px
+
+#proj
+  width: 1060px
+  height: 250px
+  margin: 0 auto
+  padding: 5px 5px
+  display: none
+
+#exit
+  width: 35px
+  border-radius: 20px
+  padding-left: 12px
+  height: 20px
+  border: 1px solid white
+  margin-bottom: 20px
+  background-color: red
+  opacity: 0.7
+  color: white
+  font-family: 'Fjalla One'
+
+
+.indiv
+  width: 250px
+  height: 250px
+  position: relative
+  display: inline-block
+  border: 1px solid black
+  display: inline-block
+  position: relative
+  background-color: black
+  opacity: 0.8
+  color: white
+  padding: 40px 0px 0px 10px
+  text-wrap: wrap
+  box-sizing: border-box
+  margin-left: 10px
+  border-radius: 15px
+  font-family: monospace
+  > div img
+    width: 90px
+    height: 90px
+    padding-right: 5px
+  > p
+    text-wrap: wrap
+
+.header
+  width: 248px
+  height: 35px
+  border-bottom: 1px solid white
+  background-color: black
+  position: relative
+  opacity: 1
+  bottom: 40px
+  right: 11px
+
+  > h1
+    text-align: center
+    position: relative
+    bottom: 10px
+    color: white
+
+.a
+  position: relative
+  bottom: 30px

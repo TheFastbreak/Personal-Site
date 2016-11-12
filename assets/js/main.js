@@ -21,5 +21,25 @@ $(document).ready(function () {
     con.fadeOut();
   });
 
+  var projects = $('#projects');
+
+  var hold = 0;
+
+  projects.click(function(){
+    if(hold == 0){
+      $('#wrap').animate({bottom:'180px'}, "slow");
+      $('#proj').fadeIn(1300);
+      hold = 1
+    }else if (hold == 1) {
+      $('#proj').fadeOut(700);
+      $('#wrap').animate({bottom:'0px'}, 1000);
+      hold = 0;
+    }
+
+  });
+
+
+
+
 
 });
