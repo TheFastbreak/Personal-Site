@@ -1,0 +1,58 @@
+body, html, h1, h2, span{
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+
+body{
+  background-color: black;
+}
+
+.con{
+  width: 680px;
+  height: 680px;
+  background-color: #F8E71C;
+  position: relative;
+  margin: 0 auto;
+  margin-top: calc((100vh - 720px) * 0.50);
+  font-family: 'Stardos Stencil', cursive;
+  font-weight: bold;
+  text-align: center;
+}
+
+#h{
+  font-size: 500px;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+#s{
+  font-size: 288px;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+#gear{
+  position: absolute;
+  margin-top: 20px;
+  left: calc((100vw - 680px) * 0.25);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  color: white;
+  width: 1000px;
+  text-align: center;
+  left: calc((100vw - 1000px) * 0.50);
+  padding-bottom: 100px;
+}
