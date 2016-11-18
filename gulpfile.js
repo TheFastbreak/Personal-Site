@@ -59,7 +59,7 @@ gulp.task('watch', function () {
     gulp.watch(['*.html', '_layouts/*.html', '_includes/*','blog/*.html'], ['jekyll-rebuild']);
     gulp.watch(['assets/js/**'], ['jekyll-rebuild']);
     gulp.watch(['assets/img/**'], ['jekyll-rebuild']);
-    gulp.watch(['blog/**'], ['jekyll-rebuild']);
+    gulp.watch(['labs/**'], ['jekyll-rebuild']);
 });
 
 /**

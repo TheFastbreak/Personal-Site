@@ -1,0 +1,231 @@
+body, html, h1, h2, span{
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+
+body{
+  background-color: black;
+}
+
+.con{
+  width: 680px;
+  height: 680px;
+  background-color: #F8E71C;
+  position: relative;
+  margin: 0 auto;
+  margin-top: calc((100vh - 720px) * 0.50);
+  font-family: 'Stardos Stencil', cursive;
+  font-weight: bold;
+  text-align: center;
+}
+
+#h{
+  font-size: 500px;
+  display: inline-block;
+}
+
+#s{
+  font-size: 288px;
+  display: inline-block;
+}
+
+#gear{
+  position: relative;
+  animation: spin 1s linear infinite;
+  margin-top: 20px;
+  top: 40px;
+}
+
+.text{
+  height: 558px;
+}
+
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  color: white;
+  width: 1000px;
+  text-align: center;
+  left: calc((100vw - 1000px) * 0.50);
+  padding-bottom: 50px;
+  font-family: monospace;
+}
+
+@media screen and (max-width: 1550px){
+  .con{
+    width: 480px;
+    height: 480px;
+    background-color: #F8E71C;
+    position: relative;
+    margin: 0 auto;
+    margin-top: calc((100vh - 420px) * 0.50);
+    font-family: 'Stardos Stencil', cursive;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #h{
+    font-size: 300px;
+    display: inline-block;
+  }
+
+  #s{
+    font-size: 88px;
+    display: inline-block;
+  }
+
+  footer{
+    position: fixed;
+    bottom: 0;
+    color: white;
+    width: 800px;
+    text-align: center;
+    left: calc((100vw - 800px) * 0.50);
+    padding-bottom: 50px;
+    font-family: monospace;
+    font-size: 9px;
+  }
+
+}
+
+@media screen and (max-width: 851px){
+  .con{
+    width: 480px;
+    height: 480px;
+    background-color: #F8E71C;
+    position: relative;
+    margin: 0 auto;
+    margin-top: calc((100vh - 480px) * 0.50);
+    font-family: 'Stardos Stencil', cursive;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #h{
+    font-size: 300px;
+    display: inline-block;
+  }
+
+  #s{
+    font-size: 88px;
+    display: inline-block;
+  }
+
+  footer{
+    position: fixed;
+    bottom: 0;
+    color: white;
+    width: 600px;
+    text-align: center;
+    left: calc((100vw - 600px) * 0.50);
+    padding-bottom: 50px;
+    font-family: monospace;
+  }
+
+}
+
+@media screen and (max-width: 500px){
+  body{
+    padding-top: 40px;
+  }
+  .con{
+    width: 340px;
+    height: 340px;
+    background-color: #F8E71C;
+    position: relative;
+    margin: 0 auto;
+    font-family: 'Stardos Stencil', cursive;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #h{
+    font-size: 200px;
+    display: inline-block;
+  }
+
+  #s{
+    font-size: 44px;
+    display: inline-block;
+  }
+
+  footer{
+    position: fixed;
+    bottom: 0;
+    color: white;
+    width: 360px;
+    text-align: center;
+    left: calc((100vw - 360px) * 0.50);
+    font-family: monospace;
+
+  }
+
+  .text{
+    height: 158px;
+  }
+
+  #gear{
+    position: relative;
+    animation: spin 1s linear infinite;
+    top: 40px;
+    width: 60px;
+    height: 60px;
+  }
+
+}
+
+@media screen and (max-width: 350px){
+  .con{
+    width: 240px;
+    height: 240px;
+    background-color: #F8E71C;
+    position: relative;
+    margin: 0 auto;
+    font-family: 'Stardos Stencil', cursive;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #h{
+    font-size: 100px;
+    display: inline-block;
+  }
+
+  #s{
+    font-size: 44px;
+    display: inline-block;
+  }
+
+  footer{
+    position: fixed;
+    bottom: 0;
+    color: white;
+    width: 280px;
+    text-align: center;
+    left: calc((100vw - 280px) * 0.50);
+    font-family: monospace;
+
+  }
+
+  .text{
+    height: 158px;
+  }
+
+  #gear{
+    position: relative;
+    animation: spin 1s linear infinite;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+  }
+
+}
